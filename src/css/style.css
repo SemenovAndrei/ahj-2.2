@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(0, 0, 0);
+  color: #ffffff;
+  font-size: 2.5em;
+}
+
+table, th, td {
+  border: 1px solid rgb(25, 250, 55);
+  border-collapse: collapse;
+}
+
+.table {
+  margin: 100px auto;
+  width: 70%;
+}
+
+tr {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+td,
+th {
+  padding: 20px;
+  width: 15%;
+}
+
+.imdb {
+  width: 20%;
+}
+
+
+.title {
+  width: 50%;
+}
+
+.sorted-up::after {
+  content: '  \2191';
+}
+
+.sorted-down::after {
+  content: '  \2193';
+}
