@@ -2,6 +2,13 @@
  * @class Table
  */
 export default class Table {
+  /**
+   * Читает данные из data
+   *
+   * Создает таблицу согласно разметки
+   *
+   * @param {Array} data - массив с данными
+   */
   constructor(data) {
     this.data = data;
     this.table = null;
@@ -11,6 +18,11 @@ export default class Table {
     this.getTable();
   }
 
+  /**
+   * Создает разметку для таблицы
+   *
+   * @param {Array} data - массив данных
+   */
   createTableMarkup() {
     this.table = document.createElement('table');
     this.table.classList.add('table');
@@ -45,11 +57,21 @@ export default class Table {
     });
   }
 
+  /**
+   * Записывает this.table в body
+   */
   getTable() {
     const body = document.querySelector('body');
     body.insertBefore(this.table, body.firstChild);
   }
 
+  /**
+   * Сортирует массив данных по возрастанию
+   *
+   * Выводит отсортированную таблицу
+   *
+   * @param {String} param - параметр для сортировки
+   */
   sortUp(param) {
     this.clearSortedClass();
 
@@ -70,9 +92,15 @@ export default class Table {
     table.forEach((e) => {
       this.table.appendChild(e);
     });
-    return true;
   }
 
+  /**
+   * Сортирует массив данных по убыванию
+   *
+   * Выводит отсортированную таблицу
+   *
+   * @param {String} param - параметр для сортировки
+   */
   sortDown(param) {
     this.clearSortedClass();
 
@@ -92,9 +120,11 @@ export default class Table {
     table.forEach((e) => {
       this.table.appendChild(e);
     });
-    return true;
   }
 
+  /**
+   * Запускает сортировку таблицы каждые 2 секунды
+   */
   startSort() {
     const param = [];
     const cells = document.querySelectorAll('th');
@@ -116,10 +146,16 @@ export default class Table {
     this.timerSort = setInterval(func, 4000);
   }
 
+  /**
+   * Останавливает сортировку
+   */
   stopSort() {
     clearInterval(this.timerSort);
   }
 
+  /**
+   * Удаляет классы сортировки
+   */
   clearSortedClass() {
     const cells = this.table.querySelectorAll('th');
     cells.forEach((cell) => {
