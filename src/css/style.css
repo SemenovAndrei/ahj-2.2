@@ -15,7 +15,7 @@ table, th, td {
 
 .table {
   margin: 100px auto;
-  width: 70%;
+  width: 90%;
 }
 
 tr {
@@ -30,8 +30,13 @@ th {
   width: 15%;
 }
 
+.year {
+  text-align: center;
+}
+
 .imdb {
   width: 20%;
+  text-align: center;
 }
 
 
@@ -41,8 +46,11 @@ th {
 
 .sorted-up::after {
   content: '  \2191';
+  color: red;
 }
 
 .sorted-down::after {
   content: '  \2193';
+  color: red;
+
 }
