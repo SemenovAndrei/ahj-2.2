@@ -5,7 +5,7 @@
 body {
   background: rgb(0, 0, 0);
   color: #ffffff;
-  font-size: 2.5em;
+  font-size: 2.5rem;
 }
 
 table, th, td {
@@ -21,13 +21,18 @@ table, th, td {
 tr {
   display: flex;
   justify-content: space-between;
-
 }
 
 td,
 th {
   padding: 20px;
   width: 15%;
+}
+
+th {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .year {
@@ -39,18 +44,17 @@ th {
   text-align: center;
 }
 
-
 .title {
   width: 50%;
 }
 
-.sorted-up::after {
-  content: '  \2191';
+.sorted-up::after,
+.sorted-down::after {
+  content: '\2191';
+  margin-left: 10px;
   color: red;
 }
 
 .sorted-down::after {
-  content: '  \2193';
-  color: red;
-
+  content: '\2193';
 }
